@@ -16,6 +16,13 @@ package Olivia;
  * ListNode(int x) { val = x; }
  * }
  */
+ 
+  // test miao weisha bushi ide dakai
+  // ide takes more time and consume battery!
+  //u are so clever...
+  // That's it?
+  // not yet
+  // let me continue...
 class AddTwoNumbers2 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode pre = new ListNode(0);
