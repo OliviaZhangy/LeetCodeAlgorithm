@@ -2,25 +2,40 @@ package Olivia;
 
 public class findMedianSortedArrays4_1 {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-
+        int i = 0;
+        int j = 0;
+        int k = 0;
         int m = nums1.length;
         int n = nums2.length;
-        int start1 = nums1[0];
-        int end1 = nums1[m - 1];
-        int start2 = nums2[0];
-        int end2 = nums2[n - 1];
-        int mid_l = (m+n)/2-1;
-        int mid_r = (m+n)/2+1;
-        if(end1<=start2){
-            if(m<mid_l){
-                return (nums1[mid_l-m]+nums1[mid_r-m])/2;
+        int []numsTotal = new int[n+m];
+        while(i<m&&j<n){
+            if(nums1[i]<nums2[j]){
+                numsTotal[k] = nums1[i];
+                i++;
             }
             else{
-                return
+                numsTotal[k] = nums2[j];
+                j++;
             }
-
+            k++;
         }
-
+        while(i<m){
+            numsTotal[k] = nums1[i];
+            k++;
+            i++;
+        }
+        while(j<n){
+            numsTotal[k] = nums2[j];
+            k++;
+            j++;
+        }
+        k--;
+        if(k%2==0){
+            return numsTotal[k/2];
+        }
+        else{
+            return (double) (numsTotal[(k+1)/2]+numsTotal[k/2])/2;
+        }
     }
-    private double medianHelper (int[]nums1,int[]nums2, )
+
 }
