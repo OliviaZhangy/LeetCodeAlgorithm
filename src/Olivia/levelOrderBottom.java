@@ -1,4 +1,3 @@
-import
 
 import java.util.*;
 
@@ -12,7 +11,7 @@ import java.util.*;
  * }
  */
 public class levelOrderBottom{
-    public List<List<Integer>> levelOrderBottom(TreeNode root){
+    public List<List<Integer>> levelOrderBottom1(TreeNode root){
     List<List<Integer>> result = new ArrayList<List<Integer>>();
     //special case when root is empty
         if(root==null){

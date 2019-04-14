@@ -1,10 +1,19 @@
 package Olivia;
 
 
+import src.Olivia.shortestDistance;
+
 import java.util.Arrays;
 
 public class Test {
     public static void main(String[] args) {
+        int[][] grid = {{1,0,2,0,1},{0,0,0,0,0},{0,0,1,0,0}};
+        shortestDistance test = new shortestDistance();
+        System.out.print(test.shortestDistance2(grid));
+
+
+    }
+    }
 
 //        int[] height = new int[]{1,2,4,3};
 //        MaxArea11 test = new MaxArea11();
@@ -51,12 +60,7 @@ public class Test {
 
        /* RotateRight61 test = new RotateRight61();
         RotateRight61.ListNode head = new RotateRight61.ListNode(0);
-        RotateRight61.ListNode p = head;
-        p.next = new RotateRight61.ListNode(1);*/
-        SortColors75 sortColors75Test = new SortColors75();
-        int[] sss = {1, 1, 2, 0, 1, 1, 1, 2};
-        sortColors75Test.sortColors(sss);
-        System.out.println(Arrays.toString(sss));
+        RotateRight61.ListNode p = head;*/
+//
 
-    }
-}
+
