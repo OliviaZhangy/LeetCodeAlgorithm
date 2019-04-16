@@ -1,6 +1,12 @@
 package src.Olivia;
 
 //NO.364
+//Using BFS
+//Each level add one time and add former level one more time
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * // This is the interface that allows for creating nested lists.
@@ -31,8 +37,29 @@ package src.Olivia;
  * }
  */
 
-public class depthSumInverse
-        public int depthSumInverse(List<NestedInteger> nestedList) {
-
+public class depthSumInverse{
+    public int depthSumInverse(List<NestedInteger> nestedList) {
+        //corner case
+        if (nestedList == null)
+            return 0;
+        int sum = 0;
+        int curSum = 0;
+        Queue<NestedInteger> queue = new LinkedList<>();
+        queue.addAll(nestedList);
+        while(!queue.isEmpty()){
+            int size = queue.size();
+            for(int i=0;i<size;i++){
+                NestedInteger cur = queue.remove();
+                if(cur.isInteger){
+                    //add level one again and again
+                    curSum += cur.getInteger();
+                }
+                else{
+                    queue.addAll(cur.getList());
+                }
+            }
+            sum += curSum;
         }
+        return sum;
+    }
 }
