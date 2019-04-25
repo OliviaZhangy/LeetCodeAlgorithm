@@ -52,8 +52,21 @@ public class maxProfit3 {
 
 //3
     //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/discuss/135704/Detail-explanation-of-DP-solution
-    public int maxProfit(int[] prices) {
-
+public int maxProfit(int[] prices) {
+    //corner case
+    if(prices.length==0)
+        return 0;
+    int len = prices.length;
+    int[][] dp = new int[3][len];
+    for(int level=1;level<3;level++){
+        int min = prices[0];
+        for(int i =1;i<len;i++){
+            min = Math.min(min,prices[i]-dp[level-1][i-1]);
+            dp[level][i] = Math.max(dp[level][i-1],prices[i]-min);
+        }
     }
+    return dp[2][len-1];
+
+}
 
 }
