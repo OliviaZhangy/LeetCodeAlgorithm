@@ -12,14 +12,18 @@ public class UniquePaths62 {
             return 1;
         int[][] tmp = new int[m][n];
         tmp[0][0] = 1;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (i - 1 >= 0 && i - 1 < m) {
-                    tmp[i][j] += tmp[i - 1][j];
-                }
-                if (j - 1 >= 0 && j - 1 < n) {
-                    tmp[i][j] += tmp[i][j - 1];
-                }
+        for(int i=0;i<m;i++){
+            tmp[i][0] = 1;
+        }
+        for(int i=0;i<n;i++){
+            tmp[0][i] = 1;
+        }
+
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+
+                    tmp[i][j] = tmp[i - 1][j]+ tmp[i][j - 1];
+
 
             }
         }
