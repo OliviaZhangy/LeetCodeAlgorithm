@@ -24,7 +24,7 @@ public class NumArray {
     SegmentTreeNode root = null;
 
     public NumArray(int[] nums) {
-        SegmentTreeNode root = buildTree( nums, 0,nums.length-1);
+         root = buildTree( nums, 0,nums.length-1);
     }
     private SegmentTreeNode buildTree(int[] nums,int start,int end){
         if(start>end){
