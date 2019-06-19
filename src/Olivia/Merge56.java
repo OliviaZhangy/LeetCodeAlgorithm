@@ -1,7 +1,12 @@
 package Olivia;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+
+//NO 56
+//interval
 
 /**
  * Definition for an interval.
@@ -14,20 +19,7 @@ import java.util.List;
  */
 
 public class Merge56 {
-    public class Interval {
-        int start;
-        int end;
 
-        Interval() {
-            start = 0;
-            end = 0;
-        }
-
-        Interval(int s, int e) {
-            start = s;
-            end = e;
-        }
-    }
 
 //    public List<Interval> merge(List<Interval> intervals) {
 //        List<Interval> result = new ArrayList<>();
@@ -44,4 +36,37 @@ public class Merge56 {
 //        return result;
 //
 //    }
+
+    public int[][] merge(int[][] intervals) {
+        //corner case
+        if(intervals==null||intervals.length<=1) return intervals;
+
+        //sort it by start point
+        Arrays.sort(intervals, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[0]-o2[0];
+            }
+        });
+
+        List<int[]> result = new ArrayList<>();
+        int[] newInterval = intervals[0];
+        result.add(newInterval);
+        for(int[] cur:intervals){
+            //if exists overlapping
+            if(cur[0]<=newInterval[1]){
+                newInterval[1] = Math.max(cur[1],newInterval[1]);
+            }
+            // if not exists overlapping
+            else{
+                newInterval = cur;
+                result.add(newInterval);
+            }
+
+        }
+        return result.toArray(new int[result.size()][]);
+
+
+
+    }
 }
