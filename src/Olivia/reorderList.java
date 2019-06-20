@@ -12,36 +12,43 @@ public class reorderList {
     }
     //first: reverse the node from middle 1 2 3 4 5 -> 1 2 3 5 4
     //second: inset each 1 5 2 4 3
-    public void reorderList(ListNode head) {
-        //corner case
-        if(head==null||head.next==null||head.next.next==null) return;
-        ListNode p1 = head;
-        ListNode p2 = head;
-        //find the middle one p1
-        while (p2.next!=null&&p2.next.next!=null){
-            p1 = p1.next;
-            p2 = p2.next.next;
-        }
-        //reverse from mid
-        ListNode middle = p1;
-        ListNode post = p1.next;
-        while(post.next!=null){
-            ListNode cur = post.next;
-            post.next = cur.next;
-            cur.next = middle.next;
-            middle.next = cur;
+        public void reorderList(ListNode head) {
+            if (head == null) {
+                return;
+            }
+
+            // Find the middle node
+            ListNode slow = head, fast = head.next;
+            while (fast != null && fast.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+
+            // Reverse the second half
+            ListNode head2 = reverse(slow.next);
+            slow.next = null;
+
+            // Link the two halves together
+            while (head != null && head2 != null) {
+                ListNode tmp1 = head.next;
+                ListNode tmp2 = head2.next;
+                head2.next = head.next;
+                head.next = head2;
+                head = tmp1;
+                head2 = tmp2;
+            }
         }
 
-        p1 = head;
-        p2 = middle.next;
-        while(p1!=middle){
-            middle.next = p2.next;
-            p2.next = p1.next;
-            p1.next = p2;
-            p1 = p2.next;
-            p2 = middle.next;
+        private ListNode reverse(ListNode n) {
+            ListNode prev = null;
+            ListNode cur = n;
+            while (cur != null) {
+                ListNode tmp = cur.next;
+                cur.next = prev;
+                prev = cur;
+                cur = tmp;
+            }
+            return prev;
         }
-
-    }
 
 }

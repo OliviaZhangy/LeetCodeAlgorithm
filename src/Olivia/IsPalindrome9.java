@@ -1,11 +1,15 @@
 package Olivia;
 
+//NO 9
+//string
+
 public class IsPalindrome9 {
     public boolean isPalindrome(int x) {
         if (x < 0) return false;
         if (x <= 9) return true;
         int cur = 0;
         int tmp = x;
+        //construct a palindrome cur
         while (tmp / 10 != 0 || tmp % 10 != 0) {
             int remain = tmp % 10;
             cur = cur * 10 + remain;

@@ -1,7 +1,7 @@
 package src.Olivia;
 
 //NO 125
-
+//string
 
 public class isPalindrome {
     public boolean isPalindrome(String s) {
@@ -13,6 +13,8 @@ public class isPalindrome {
         char[] arr = new char[len];
         int idx = 0;
 
+
+//ignore  meaningless character
         for (int i =0; i< len; ++i) {
             char ch = s.charAt(i);
             if (isValid(ch)) {
