@@ -1,7 +1,7 @@
 package src.Olivia;
 
 //NO 92
-// try dp
+// list rotation
 
 public class reverseBetween {
 
