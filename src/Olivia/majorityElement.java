@@ -10,6 +10,6 @@ public class majorityElement {
     //sorting
         Arrays.sort(nums);
         return nums[nums.length/2];
-        
+
     }
 }
