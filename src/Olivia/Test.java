@@ -1,22 +1,21 @@
 package Olivia;
 
 
+import src.Olivia.RandomizedCollection;
 import src.Olivia.shortestDistance;
 
 import java.util.Arrays;
+import java.util.Random;
 
 
 public class Test {
     public static void main(String[] args) {
-        int[][] grid = {{1,0,2,0,1},{0,0,0,0,0},{0,0,1,0,0}};
-        shortestDistance test = new shortestDistance();
-        System.out.print(test.shortestDistance2(grid));
-long[] arr = new long[5];
-if (arr.length<2){
-    long max = Math.pow(2,3);
-}
+        RandomizedCollection obj = new RandomizedCollection();
+  boolean param_1 = obj.insert(1);
+  boolean param_2 = obj.remove(3);
+  int param_3 = obj.getRandom();
+  System.out.print(param_3);
 
-    }
     }
 
 //        int[] height = new int[]{1,2,4,3};
