@@ -5,6 +5,7 @@ import java.util.HashMap;
 //NO 3
 //sliding window
 
+
 class LengthOfLongestSubstring3 {
     public int lengthOfLongestSubstring(String s) {
         if (s == null) {
@@ -21,4 +22,5 @@ class LengthOfLongestSubstring3 {
         }
         return curMax;
     }
+
 }
