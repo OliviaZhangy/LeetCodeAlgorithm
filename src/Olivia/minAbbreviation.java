@@ -6,6 +6,6 @@ package src.Olivia;
 //use bit mask and BFS with pruning
 public class minAbbreviation {
     public String minAbbreviation(String target, String[] dictionary) {
-
+        return "";
     }
 }

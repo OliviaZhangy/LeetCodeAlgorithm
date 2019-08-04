@@ -7,6 +7,6 @@ package src.Olivia;
 
 public class findNumberOfLIS {
     public int findNumberOfLIS(int[] nums) {
-
+        return 0;
     }
 }

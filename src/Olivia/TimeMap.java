@@ -15,7 +15,7 @@ class TimeMap {
     }
 
     public String get(String key, int timestamp) {
-
+        return "";
     }
 }
 
