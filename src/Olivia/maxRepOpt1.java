@@ -1,5 +1,8 @@
 package src.Olivia;
 
+//NO 1156
+//sliding window
+
 public class maxRepOpt1 {
     public int maxRepOpt1(String text) {
         //corner case
@@ -13,9 +16,11 @@ public class maxRepOpt1 {
         int window = 1;
         for(int left = 0; left < text.length();left++){
                char tc = tmp[left];
+               //do the window again
                int right = left;
                int change = 0;
                int count = 0;
+               //only cover one character different
                while (right<text.length()&&(tc==tmp[right]||change==0)&&count<alpha[tc-'a']){
                    if(tc!=tmp[right])
                        change = 1;
