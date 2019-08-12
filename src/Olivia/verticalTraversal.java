@@ -17,6 +17,7 @@ public class verticalTraversal {
       TreeNode(int x) { val = x; }
   }
     public List<List<Integer>> verticalTraversal(TreeNode root) {
+        //focus on the structure, key is the x distance, value is sored by the y distance
         TreeMap<Integer,TreeMap<Integer, PriorityQueue<Integer>>> map = new TreeMap<>();
         List<List<Integer>> res = new ArrayList<>();
         if(root==null) return res;
