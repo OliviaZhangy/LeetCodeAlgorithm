@@ -1,4 +1,4 @@
-//package src.Olivia;
+package src.Olivia;
 //
 //import java.util.*;
 //
@@ -52,3 +52,63 @@
 //    }
 //}
 //
+
+import java.util.*;
+
+//NO 126
+public class findLadders {
+    public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
+        List<List<String>> res = new ArrayList<>();
+        //corner case
+        if(wordList.size()==0||!wordList.contains(endWord)) return res;
+        Set<String> wordSet = new HashSet<>(wordList);
+        //First layer
+        Set<String> layer  = new HashSet<>();
+        layer.add(beginWord);
+
+        //first path
+        Map<String,List<List<String>>> map = new HashMap<>();
+        List<String> path = new ArrayList<>();
+        path.add(beginWord);
+        map.put(beginWord,new ArrayList<>());
+        map.get(beginWord).add(path);
+
+        boolean find = false;
+        while (!layer.isEmpty()&&!wordSet.isEmpty()&&!find){
+            //avoid duplicate word
+            wordSet.removeAll(layer);
+            Set<String> nextlayer = new HashSet<>();
+            for(String s:layer){
+                //the cur path on the cur word
+                List<List<String>> curPath = map.get(s);
+                //BFS to find the next layer
+                for(int i=0;i<s.length();i++){
+                    char[] charArr = s.toCharArray();
+                    for(char j = 'a';j<='z';j++){
+                        charArr[i] = j;
+                        String curWord = new String(charArr);
+
+                        if(wordSet.contains(curWord)){
+                            nextlayer.add(curWord);
+                            for(List<String> cur: curPath){
+                                List<String> nextPath  = new LinkedList<>(cur);
+                                nextPath.add(curWord);
+                                map.putIfAbsent(curWord,new LinkedList<>());
+                                map.get(curWord).add(nextPath);
+                                if(endWord.equals(curWord)){
+                                    res.add(nextPath);
+                                    find = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                map.remove(s);
+
+            }
+            layer.clear();
+            layer.addAll(nextlayer);
+        }
+        return res;
+    }
+}
