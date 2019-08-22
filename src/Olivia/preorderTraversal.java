@@ -14,16 +14,24 @@ public class preorderTraversal {
       TreeNode(int x) { val = x; }
   }
 
+  //recursive version
+//    public List<Integer> preorderTraversal(TreeNode root) {
+//        List<Integer> list= new ArrayList<>();
+//        preHelper(root,list);
+//        return list;
+//    }
+//    private  void preHelper(TreeNode root, List<Integer>list){
+//        if(root==null)
+//            return;
+//        list.add(root.val);
+//        if(root.left!=null) preHelper(root.left,list);
+//        if(root.right!=null) preHelper(root.right,list);
+//    }
+
+    //iteration version
     public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> list= new ArrayList<>();
-        preHelper(root,list);
-        return list;
+        List<Integer> res = new ArrayList<>();
+
     }
-    private  void preHelper(TreeNode root, List<Integer>list){
-        if(root==null)
-            return;
-        list.add(root.val);
-        if(root.left!=null) preHelper(root.left,list);
-        if(root.right!=null) preHelper(root.right,list);
-    }
+
 }
