@@ -31,7 +31,7 @@ public class preorderTraversal {
     //iteration version
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
-
+return null;
     }
 
 }

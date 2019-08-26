@@ -12,8 +12,8 @@ public class movesToMakeZigzag {
         //case 2 even number bigger
         int move2 = 0;
         for(int i=1;i<len;i++){
-            if(i%2==1)
+            if(i%2==1);
         }
-
+return 0;
     }
 }
