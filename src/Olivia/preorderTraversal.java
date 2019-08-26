@@ -5,6 +5,7 @@ package src.Olivia;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class preorderTraversal {
     public class TreeNode {
@@ -28,10 +29,20 @@ public class preorderTraversal {
 //        if(root.right!=null) preHelper(root.right,list);
 //    }
 
-    //iteration version
+    //iteration version :stack 1.first push right 2.then push left
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
-return null;
+        //corner case
+        if(root==null) return res;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()){
+            TreeNode cur = stack.pop();
+            res.add(cur.val);
+            if(cur.right!=null) stack.push(cur.right);
+            if (cur.left!=null) stack.push(cur.left);
+        }
+        return res;
     }
 
 }
