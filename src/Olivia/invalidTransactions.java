@@ -9,7 +9,7 @@ public class invalidTransactions {
 
     public List<String> invalidTransactions(String[] transactions) {
         List<String> res = new ArrayList<>();
-
+return null;
 
     }
 }
