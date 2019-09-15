@@ -22,5 +22,6 @@ public class wateringPlantsSteps {
             }
             return res;
         }
+        return 1;
     }
 }

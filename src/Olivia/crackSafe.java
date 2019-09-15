@@ -2,7 +2,7 @@ package src.Olivia;
 
 //NO 753
 //backtracking
-//de Bruijn sequence of order 
+//de Bruijn sequence of order
 
 import java.util.HashSet;
 

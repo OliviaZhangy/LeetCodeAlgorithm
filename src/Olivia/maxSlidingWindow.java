@@ -8,7 +8,6 @@ import java.util.TreeSet;
 public class maxSlidingWindow {
     public int[] maxSlidingWindow(int[] nums, int k) {
         TreeSet<Integer> set = new TreeSet<>();
-
-
+        return null;
     }
 }
