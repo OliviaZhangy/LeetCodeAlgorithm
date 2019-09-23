@@ -28,4 +28,4 @@ public class guessNumber {
             return start;
         }
     }
-}
+
